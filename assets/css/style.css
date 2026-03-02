@@ -1,0 +1,267 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navegação */
+header {
+    background: #239ec0;
+    color: #fff;
+    padding: 1.5rem 0;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;}
+
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 20px; }
+nav ul li a { color: #fff; text-decoration: none; font-weight: bold; }
+
+
+.logo {
+    display: flex;  /* Alinha os itens em linha */
+    align-items: center;  /* Alinha verticalmente ao centro a foto e texto*/
+    gap: 12px;  /* Espaçamento entre a foto e o texto */
+}
+
+.logo-text {
+    font-weight: normal;  /* Deixa o texto em negrito */
+    color: white;  /* Cor do texto do logo */
+}
+
+.profile-pic {
+    width: 50px;    /* Ajuste o tamanho conforme necessário */
+    height: 50px;   /* Deve ser igual à largura para manter a proporção circular */
+    border-radius: 50%;     /* Torna a imagem circular */
+    object-fit: cover;  /* Garante que a imagem preencha o círculo sem distorção */
+    border: 0px solid #fff;     /* Opcional: Adiciona uma borda branca ao redor da imagem */
+}
+
+.hero {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/assets/img/unnamed.jpg');
+    /* Faz a imagem cobrir toda o espaço sem distorcer */
+    background-size: cover;
+    background-position: center;
+
+    /* Altura da seção (ajuste conforme necessário) */
+    height: 60vh;
+
+    /* Centraliza o conteúdo dentro da seção */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white; /* Cor do texto para garantir legibilidade sobre a imagem */
+    padding-top: 60px;
+}
+
+.hero-content{
+    color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.brand-namev {
+    font-weight: bold;  /* Deixa o texto em negrito */
+    color: white;
+}
+
+.hero h1 span { color: #ffeaa7; }
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: #fff;
+    color: #6c5ce7;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover { background: #ffeaa7; }
+
+/* Layout Geral */
+.container {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+h2 { margin-bottom: 20px; border-left: 5px solid #6c5ce7; padding-left: 10px; }
+
+/* Grid de Projetos */
+.grid-projetos {
+    display: grid;  /* Usa grid para organizar os cards de projetos */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  /* Cria colunas responsivas que se ajustam ao tamanho da tela */
+    gap: 20px;  /* Espaçamento entre os cards */
+}
+
+.card {    
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: #239ec0; /* Cor de destaque ao passar o mouse */
+    color: white; /* Garante que o texto fique legível sobre a nova cor de fundo */
+    transform: translateY(-5px); /* Eleva o card para dar um efeito de destaque */
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2); /* Aumenta a sombra para reforçar o destaque */
+}
+
+/* Footer */
+footer {
+    background: #239ec0;
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.social-links a:hover { color: #a29bfe; }
+
+.sobre-container {
+    line-height: 1.8;
+    color: #333;
+    max-width: 800px;
+}
+
+/* Badge de destaque no topo */
+.badges {
+    background: #f0f2f5;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #2c3e50;
+    display: inline-block;
+}
+
+/* A mágica para a lista ficar na mesma linha ou organizada */
+.lista-entregas {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Alinha os itens em linha/grid */
+    flex-wrap: wrap; /* Se não couber, ele pula para baixo com elegância */
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.lista-entregas li {
+    background: #ffffff;
+    border-left: 4px solid #2980b9; /* Azul executivo */
+    padding: 10px 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    flex: 1 1 calc(45% - 10px); /* Garante que fiquem dois por linha no desktop */
+    font-size: 0.95rem;
+}
+
+.carreira {
+    padding: 60px 20px;
+    background-color: #f4f7f6; /* Fundo levemente cinza para destacar os cards brancos */
+}
+
+.carreira-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card-carreira {
+    background: #fff;
+    padding: 30px;  /* Aumenta o padding para dar mais espaço interno */
+    border-radius: 12px;  /* Bordas arredondadas para um visual mais moderno */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 5px solid #239ec0; /* Detalhe na cor que você gosta */
+    transition: transform 0.3s ease;
+}
+
+.card-carreira:hover {
+    transform: translateY(-5px);
+}
+
+.item-carreira {
+    margin-bottom: 26px;
+    padding-bottom: 20px;  /* Espaço para respirar entre os itens */
+    border-bottom: 1px solid #eee;
+}
+
+.item-carreira h4 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.badge, .badge-futuro {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.badge { background: #e0f2f1; color: #00796b; }
+.badge-futuro { background: #fff3e0; color: #e65100; }
+
+.lista-certificados {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-certificados li {
+    margin-bottom: 15px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.link-cert {
+    color: #239ec0;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.link-cert:hover { text-decoration: underline; }
+
+/* Responsividade para celular */
+@media (max-width: 600px) {
+    .lista-entregas li {
+        flex: 1 1 100%;
+    }
+}
